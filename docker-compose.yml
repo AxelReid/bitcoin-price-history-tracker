@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - DATABASE_URL=file:./dev.db
+      - NODE_ENV=production
+    volumes:
+      - ./backend/prisma/dev.db:/app/prisma/dev.db
+    restart: unless-stopped
+    networks:
+      - bitcoin-tracker
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://backend:4000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - bitcoin-tracker
+
+networks:
+  bitcoin-tracker:
+    driver: bridge
+
+volumes:
+  sqlite_data:
+
