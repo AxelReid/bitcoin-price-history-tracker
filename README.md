@@ -6,7 +6,7 @@ A full-stack application for tracking and visualizing Bitcoin prices with real-t
 
 ## Features
 
-- **Real-time Bitcoin Price Tracking**: Automatic hourly data collection from Coinbase API
+- **Real-time Bitcoin Price Tracking**: Automatic data collection from Coinbase API every 30 seconds
 - **Interactive Charts**: Dynamic price visualization with Recharts
 - **Flexible Time Periods**: 1 day, 1 week, 1 month, 1 year, and custom date ranges
 - **Statistics Dashboard**: Min/Max prices, averages, and percentage changes
