@@ -2,6 +2,8 @@
 
 A full-stack application for tracking and visualizing Bitcoin prices with real-time data collection and historical analysis.
 
+![alt preview](./frontend/src/assets/preview.png)
+
 ## Features
 
 - **Real-time Bitcoin Price Tracking**: Automatic hourly data collection from Coinbase API
